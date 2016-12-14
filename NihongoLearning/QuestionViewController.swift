@@ -9,13 +9,64 @@
 import UIKit
 
 class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+    
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var questionDescriptionLabel: UILabel!
     var answeredAQuestion = AnsweredStatus()
 
     
+    let q0 = QuestionBuild(questionDescription: "尚未開始答題", answerA: "000000", answerB: "000000", answerC: "000000", answerD: "000000", correctAnswer: .D )
+
     
     let q1 = QuestionBuild(questionDescription: "下列哪一種自然環境是台灣能夠產出最多樣的水果，具有成為水果王國的條件？", answerA: "以平原為主的溫帶地區", answerB: "有高山地形的溫帶地區", answerC: "以平原為主的熱帶地區", answerD: "有高山地形的熱帶地區", correctAnswer: .D )
     let q2 = QuestionBuild(questionDescription: "第二題題目", answerA: " Q2選項A", answerB: "Q2選項B", answerC: "Q2選項C", answerD: "Q2選項D" , correctAnswer: .A)
+    
+    let q3 = QuestionBuild(questionDescription: "第三題題目", answerA: " Q3選項A", answerB: "Q3選項B", answerC: "Q3選項C", answerD: "Q3選項D" , correctAnswer: .A)
+    
+    func makeQuestion(questionNumber: QuestionBuild){
+        questionDescriptionLabel.text = questionNumber.questionDescription
+        let ansStringA = questionNumber.answerA
+        let ansStringB = questionNumber.answerB
+        let ansStringC = questionNumber.answerC
+        let ansStringD = questionNumber.answerD
+        let ansCorrectAns = questionNumber.correctAnswer
+        print("RyanDebug:" + ansStringA)
+        
+        
+        //建立ans作為ANSWERS物件來寫入剛剛建立的ans1String
+        
+        let ansA = ANSWERS(answerDescription: ansStringA, answerOption: .A)
+        let ansB = ANSWERS(answerDescription: ansStringB, answerOption: .B)
+        let ansC = ANSWERS(answerDescription: ansStringC, answerOption: .C)
+        let ansD = ANSWERS(answerDescription: ansStringD, answerOption: .D)
+        let ansCorrect = ANSWERS(answerDescription: "", answerOption: ansCorrectAns)
+        
+        //把answers append到物件序列裡面好讓tableCell去讀這個序列的answerDecription
+        
+        print("RyanDebug:\(ansA.answerDescription)")
+        
+        answers.append(ansA)
+        answers.append(ansB)
+        answers.append(ansC)
+        answers.append(ansD)
+        answers.append(ansCorrect)
+        
+        print("RyanDebug:\(answers)")
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
    
     
@@ -37,7 +88,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AnswersCellID", for: indexPath) as? QuestionTableViewCell{
             let answer = answers[indexPath.row]
             cell.updateUI(answers: answer)
-            questionDescriptionLabel.text = q1.questionDescription
+            
             return cell
         }else{
             return UITableViewCell()
@@ -48,6 +99,10 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         return 4
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        
+        
         
         let answer = answers[indexPath.row]
         if answer.answerOption == q1.correctAnswer{
@@ -60,9 +115,32 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         answeredAQuestion.answeredOneQuestion()
         
 
-        if answeredAQuestion.numberOfQuestionAnswered == 1{
+        switch answeredAQuestion.numberOfQuestionAnswered {
+        case 0:
             tableView.reloadData()
-          
+            makeQuestion(questionNumber: q0)
+            tableView.reloadData()
+            
+        case 1:
+            print("第一題答完")
+            tableView.reloadData()
+            makeQuestion(questionNumber: q1)
+            tableView.reloadData()
+        case 2:
+            print("第二題答完")
+            tableView.reloadData()
+            makeQuestion(questionNumber: q2)
+            tableView.reloadData()
+            
+        case 3:
+            tableView.reloadData()
+            makeQuestion(questionNumber: q3)
+            tableView.reloadData()
+            print("第三題答完")
+        default:
+            print("還沒答題")
+            
+            
         }
         
     
@@ -72,40 +150,9 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         answerTableView.delegate = self
         answerTableView.dataSource = self
-        
-        
-        let ans1StringA = q1.answerA
-        let ans1StringB = q1.answerB
-        let ans1StringC = q1.answerC
-        let ans1StringD = q1.answerD
-        let ans1CorrectAns = q1.correctAnswer
-        print("RyanDebug:" + ans1StringA)
-        
-        let ansA = ANSWERS(answerDescription: ans1StringA, answerOption: .A)
-        let ansB = ANSWERS(answerDescription: ans1StringB, answerOption: .B)
-        let ansC = ANSWERS(answerDescription: ans1StringC, answerOption: .C)
-        let ansD = ANSWERS(answerDescription: ans1StringD, answerOption: .D)
-        let ansCorrect = ANSWERS(answerDescription: "", answerOption: ans1CorrectAns)
-        
-        
-        
-        print("RyanDebug:\(ansA.answerDescription)")
-        
-        answers.append(ansA)
-        answers.append(ansB)
-        answers.append(ansC)
-        answers.append(ansD)
-        answers.append(ansCorrect)
-        
-        print("RyanDebug:\(answers)")
-        
-        
-        
-        
-        
-
-
-        // Do any additional setup after loading the view.
+       
+        makeQuestion(questionNumber: q0)
+    
     }
 
     override func didReceiveMemoryWarning() {

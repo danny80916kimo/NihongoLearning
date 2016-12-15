@@ -99,6 +99,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         return 4
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.answerTableView.reloadData()
         
         
         
@@ -117,27 +118,35 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
 
         switch answeredAQuestion.numberOfQuestionAnswered {
         case 0:
-            tableView.reloadData()
+            
             makeQuestion(questionNumber: q0)
-            tableView.reloadData()
+            self.answerTableView.reloadData()
             
         case 1:
             print("第一題答完")
-            tableView.reloadData()
+    
             makeQuestion(questionNumber: q1)
-            tableView.reloadData()
+            DispatchQueue.main.async{
+                self.answerTableView.reloadData()
+            }
         case 2:
             print("第二題答完")
-            tableView.reloadData()
+           
             makeQuestion(questionNumber: q2)
-            tableView.reloadData()
+            DispatchQueue.main.async{
+                self.answerTableView.reloadData()
+                
+            }
             
         case 3:
-            tableView.reloadData()
             makeQuestion(questionNumber: q3)
-            tableView.reloadData()
+    
             print("第三題答完")
+            DispatchQueue.main.async{
+                self.answerTableView.reloadData()
+            }
         default:
+            self.answerTableView.reloadData()
             print("還沒答題")
             
             

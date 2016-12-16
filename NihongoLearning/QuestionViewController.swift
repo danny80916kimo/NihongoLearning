@@ -29,6 +29,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
     let q3 = QuestionBuild(questionDescription: "第三題題目", answerA: " Q3選項A", answerB: "Q3選項B", answerC: "Q3選項C", answerD: "Q3選項D" , correctAnswer: .A)
     
     func makeQuestion(questionNumber: QuestionBuild){
+        
         questionDescriptionLabel.text = questionNumber.questionDescription
         let ansStringA = questionNumber.answerA
         let ansStringB = questionNumber.answerB
@@ -50,13 +51,17 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         print("RyanDebug:\(ansA.answerDescription)")
         
-        answers.append(ansA)
-        answers.append(ansB)
-        answers.append(ansC)
-        answers.append(ansD)
-        answers.append(ansCorrect)
+        answers.insert(ansA , at: 0)
+        answers.insert(ansB , at: 1)
+        answers.insert(ansC , at: 2)
+        answers.insert(ansD , at: 3)
+        answers.insert(ansCorrect ,at: 4)
         
-        print("RyanDebug:\(answers)")
+        print("RyanDebug:\(answers.description)")
+        
+        
+                
+
     }
     
     
@@ -103,8 +108,6 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         
         
         
-        
-        
         let answer = answers[indexPath.row]
         if answer.answerOption == q1.correctAnswer{
             print("答對了")
@@ -117,11 +120,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         
 
         switch answeredAQuestion.numberOfQuestionAnswered {
-        case 0:
-            
-            makeQuestion(questionNumber: q0)
-            self.answerTableView.reloadData()
-            
+
         case 1:
             print("第一題答完")
     
@@ -129,6 +128,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
+            
         case 2:
             print("第二題答完")
            
@@ -145,6 +145,7 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
+            
         default:
             self.answerTableView.reloadData()
             print("還沒答題")

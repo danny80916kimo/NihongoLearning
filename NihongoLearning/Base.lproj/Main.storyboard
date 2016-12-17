@@ -99,7 +99,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-Sc-rIa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Jx-Sc-rIa">
                                 <rect key="frame" x="147" y="41" width="81" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NCv-e5-zzB"/>
@@ -128,11 +128,48 @@
                     <connections>
                         <outlet property="answerTableView" destination="4N4-kx-jLz" id="eWD-Y2-DXK"/>
                         <outlet property="questionDescriptionLabel" destination="jgN-Cg-qek" id="BWh-Sh-eX3"/>
+                        <segue destination="EmR-nG-4oI" kind="show" identifier="QuestionViewController" id="nae-oW-fUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Bh-7e-zib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.79999999999995" y="126.38680659670166"/>
+            <point key="canvasLocation" x="927" y="126"/>
+        </scene>
+        <!--ResultVC-->
+        <scene sceneID="VVF-33-7co">
+            <objects>
+                <viewController storyboardIdentifier="ResultVC" id="EmR-nG-4oI" customClass="ResultVC" customModule="NihongoLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="goc-kL-dGg"/>
+                        <viewControllerLayoutGuide type="bottom" id="KoC-OU-Te5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="ResultVC" id="Jpf-8t-aRy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成績結果" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qdQ-2O-A8q">
+                                <rect key="frame" x="16" y="28" width="343" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="3h4-ro-MRm"/>
+                                    <constraint firstAttribute="height" constant="162" id="4oW-p8-01S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="129"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KoC-OU-Te5" firstAttribute="top" secondItem="qdQ-2O-A8q" secondAttribute="bottom" constant="477" id="2im-dJ-jxO"/>
+                            <constraint firstItem="qdQ-2O-A8q" firstAttribute="leading" secondItem="Jpf-8t-aRy" secondAttribute="leadingMargin" id="WWW-kd-dlm"/>
+                            <constraint firstItem="qdQ-2O-A8q" firstAttribute="trailing" secondItem="Jpf-8t-aRy" secondAttribute="trailingMargin" id="hbO-BY-H8L"/>
+                            <constraint firstItem="qdQ-2O-A8q" firstAttribute="top" secondItem="goc-kL-dGg" secondAttribute="bottom" constant="8" id="p0W-fd-CPW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCx-my-VP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1680.8" y="126.38680659670166"/>
         </scene>
     </scenes>
 </document>

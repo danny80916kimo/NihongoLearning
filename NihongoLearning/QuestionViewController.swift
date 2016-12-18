@@ -305,13 +305,11 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
  
                 result.append(q10result)
             }
-
-            let sendingResults = result
-
-            print("append結果：" + "\(result)")
-            print("傳送結果：" + "\(sendingResults)")
             
-            performSegue(withIdentifier: "QuestionViewController", sender: sendingResults)
+            
+            print("before sending the result \(result[9].correct)")
+            
+            performSegue(withIdentifier: "QuestionViewController", sender: result)
             
             
         default:
@@ -340,10 +338,11 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if let destination = segue.destination as? ResultVC{
-            if let sendResult = sender as? Result{
-            destination.finalResult = sendResult
-                print("finalResult" + "\(destination.finalResult)")
+            if let sendResult = sender as?Array<Result> {
+                destination.finalResults = sendResult
+                print("finalResult" + "\(destination.finalResults)")
             }
         }
     
@@ -352,7 +351,17 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     }
     override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear" + "\(result)")
+        print("第1題答對答錯" + "\(result[0].correct)")
+        print("第2題答對答錯" + "\(result[1].correct)")
+        print("第3題答對答錯" + "\(result[2].correct)")
+        print("第4題答對答錯" + "\(result[3].correct)")
+        print("第5題答對答錯" + "\(result[4].correct)")
+        print("第6題答對答錯" + "\(result[5].correct)")
+        print("第7題答對答錯" + "\(result[6].correct)")
+        print("第8題答對答錯" + "\(result[7].correct)")
+        print("第9題答對答錯" + "\(result[8].correct)")
+        print("第10題答對答錯" + "\(result[9].correct)")
+        
     }
     /*
      // MARK: - Navigation

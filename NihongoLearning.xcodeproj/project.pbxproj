@@ -20,6 +20,7 @@
 		149BF1C31E0014BD001B29FD /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */; };
 		149BF1C51E001892001B29FD /* ANSWERS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1C41E001892001B29FD /* ANSWERS.swift */; };
 		14EE13831E04A48600D88DDF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE13821E04A48600D88DDF /* Result.swift */; };
+		14F4AEBA1E055D5C00113FDB /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		149BF1C41E001892001B29FD /* ANSWERS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANSWERS.swift; sourceTree = "<group>"; };
 		14EE13821E04A48600D88DDF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				14035E361E0083F400A89AE4 /* AnsweredStatus.swift */,
 				14035E341E006B8600A89AE4 /* AnswerModel.swift */,
 				149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */,
+				14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */,
 				149BF1AE1E000AA4001B29FD /* Main.storyboard */,
 				1476C9ED1E04989F005A099F /* ResultVC.swift */,
 				149BF1B11E000AA4001B29FD /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F4AEBA1E055D5C00113FDB /* ResultTableViewCell.swift in Sources */,
 				149BF1AD1E000AA4001B29FD /* ViewController.swift in Sources */,
 				149BF1C51E001892001B29FD /* ANSWERS.swift in Sources */,
 				14035E351E006B8600A89AE4 /* AnswerModel.swift in Sources */,

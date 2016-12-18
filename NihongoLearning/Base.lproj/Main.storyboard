@@ -157,6 +157,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x2V-ra-GLu">
+                                <rect key="frame" x="53" y="198" width="269" height="401"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultsCell" id="kcF-ZT-DqH" customClass="ResultTableViewCell" customModule="NihongoLearning" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="269" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kcF-ZT-DqH" id="MLs-DS-1Fn">
+                                            <rect key="frame" x="0.0" y="0.0" width="269" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-js-A6O">
+                                                    <rect key="frame" x="16" y="4.5" width="245" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="245" id="pgw-s6-lCq"/>
+                                                        <constraint firstAttribute="height" constant="35" id="xYX-VC-Mmm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oYv-js-A6O" firstAttribute="leading" secondItem="MLs-DS-1Fn" secondAttribute="leading" constant="16" id="iAz-Yx-AKO"/>
+                                                <constraint firstItem="oYv-js-A6O" firstAttribute="centerY" secondItem="MLs-DS-1Fn" secondAttribute="centerY" id="ij8-cj-39M"/>
+                                                <constraint firstAttribute="trailing" secondItem="oYv-js-A6O" secondAttribute="trailing" constant="8" id="kBm-pP-IGu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="resultCellLabel" destination="oYv-js-A6O" id="QVt-u7-OEu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -166,6 +201,9 @@
                             <constraint firstItem="qdQ-2O-A8q" firstAttribute="top" secondItem="goc-kL-dGg" secondAttribute="bottom" constant="8" id="p0W-fd-CPW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultTableView" destination="x2V-ra-GLu" id="s0S-C3-D0s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCx-my-VP6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,9 +10,24 @@ import UIKit
 
 class ResultVC: UIViewController {
     
+
+    @IBAction func playAgainPressed(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        self.parent?.loadView()
+    }
     
+    @IBAction func backToMainPressed(_ sender: Any) {
+        
+        
+        self.presentingViewController!.presentingViewController!.dismiss(animated: true, completion: {})
+        
+        
+        
+    }
     @IBOutlet weak var resultTableView: UITableView!
     
+    @IBOutlet weak var scoreLabel: UILabel!
     
     private var _finalResults: Array<Result>!
     
@@ -40,6 +55,17 @@ class ResultVC: UIViewController {
       print("成功了","\(string1)")
         
         }
+        
+        for result in finalResults!{
+            if result.correct{
+                score += 10
+            }
+            
+            
+        }
+        print(score)
+        scoreLabel.text = "\(score)分"
+
 
         // Do any additional setup after loading the view.
     }

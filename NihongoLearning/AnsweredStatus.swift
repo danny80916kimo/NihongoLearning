@@ -19,6 +19,14 @@ class AnsweredStatus{
         
         print("第\(numberOfQuestionAnswered)題答完了")
     }
+    func replay(){
+        
+        numberOfQuestionAnswered = 0
+        print("重新開始")
+        
+        
+        
+    }
 
     
 }

@@ -277,11 +277,19 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
             }
             
             
+            
+            
+        
+            
             performSegue(withIdentifier: "QuestionViewController", sender: result)
+            
+            result.removeAll()
+            answeredAQuestion.replay()
             
             
         default:
             self.answerTableView.reloadData()
+            
             print("還沒答題")
             
             

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14035E331E0044AB00A89AE4 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E321E0044AB00A89AE4 /* Questions.swift */; };
-		14035E351E006B8600A89AE4 /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E341E006B8600A89AE4 /* AnswerModel.swift */; };
+		14035E351E006B8600A89AE4 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E341E006B8600A89AE4 /* QuestionModel.swift */; };
 		14035E371E0083F400A89AE4 /* AnsweredStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E361E0083F400A89AE4 /* AnsweredStatus.swift */; };
 		1476C9EE1E04989F005A099F /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476C9ED1E04989F005A099F /* ResultVC.swift */; };
 		149BF1AB1E000AA4001B29FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1AA1E000AA4001B29FD /* AppDelegate.swift */; };
@@ -19,13 +19,16 @@
 		149BF1C11E001468001B29FD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1C01E001468001B29FD /* QuestionViewController.swift */; };
 		149BF1C31E0014BD001B29FD /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */; };
 		149BF1C51E001892001B29FD /* ANSWERS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1C41E001892001B29FD /* ANSWERS.swift */; };
+		14ED48801E082CB300CB43FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14ED487F1E082CB300CB43FA /* GoogleService-Info.plist */; };
+		14ED48831E08D30400CB43FA /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ED48821E08D30400CB43FA /* DataService.swift */; };
 		14EE13831E04A48600D88DDF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EE13821E04A48600D88DDF /* Result.swift */; };
 		14F4AEBA1E055D5C00113FDB /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */; };
+		50DA30F78D04419B230FEA4F /* Pods_NihongoLearning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C61B156472CC10E4FB698D3 /* Pods_NihongoLearning.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14035E321E0044AB00A89AE4 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
-		14035E341E006B8600A89AE4 /* AnswerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		14035E341E006B8600A89AE4 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		14035E361E0083F400A89AE4 /* AnsweredStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweredStatus.swift; sourceTree = "<group>"; };
 		1476C9ED1E04989F005A099F /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		149BF1A71E000AA4001B29FD /* NihongoLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NihongoLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,8 +41,14 @@
 		149BF1C01E001468001B29FD /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		149BF1C41E001892001B29FD /* ANSWERS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ANSWERS.swift; sourceTree = "<group>"; };
+		14ED487F1E082CB300CB43FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14ED48821E08D30400CB43FA /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		14ED48841E092E3D00CB43FA /* NihongoLearning.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NihongoLearning.entitlements; sourceTree = "<group>"; };
 		14EE13821E04A48600D88DDF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		32E1D5156685DB23275F7BCA /* Pods-NihongoLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NihongoLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NihongoLearning/Pods-NihongoLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		7C61B156472CC10E4FB698D3 /* Pods_NihongoLearning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NihongoLearning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB33B57EBD090CFFD4E84F37 /* Pods-NihongoLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NihongoLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-NihongoLearning/Pods-NihongoLearning.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DA30F78D04419B230FEA4F /* Pods_NihongoLearning.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +68,8 @@
 			children = (
 				149BF1A91E000AA4001B29FD /* NihongoLearning */,
 				149BF1A81E000AA4001B29FD /* Products */,
+				B5F460ECB7AE4D29A8527C30 /* Pods */,
+				B038F5879C3CA0660653276E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,13 +84,15 @@
 		149BF1A91E000AA4001B29FD /* NihongoLearning */ = {
 			isa = PBXGroup;
 			children = (
+				14ED48841E092E3D00CB43FA /* NihongoLearning.entitlements */,
+				14ED48811E08D2E200CB43FA /* Data Service */,
 				149BF1AA1E000AA4001B29FD /* AppDelegate.swift */,
 				149BF1AC1E000AA4001B29FD /* ViewController.swift */,
 				149BF1C01E001468001B29FD /* QuestionViewController.swift */,
 				14EE13821E04A48600D88DDF /* Result.swift */,
 				149BF1C41E001892001B29FD /* ANSWERS.swift */,
 				14035E361E0083F400A89AE4 /* AnsweredStatus.swift */,
-				14035E341E006B8600A89AE4 /* AnswerModel.swift */,
+				14035E341E006B8600A89AE4 /* QuestionModel.swift */,
 				149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */,
 				14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */,
 				149BF1AE1E000AA4001B29FD /* Main.storyboard */,
@@ -86,9 +100,35 @@
 				149BF1B11E000AA4001B29FD /* Assets.xcassets */,
 				149BF1B31E000AA4001B29FD /* LaunchScreen.storyboard */,
 				149BF1B61E000AA4001B29FD /* Info.plist */,
+				14ED487F1E082CB300CB43FA /* GoogleService-Info.plist */,
 				14035E321E0044AB00A89AE4 /* Questions.swift */,
 			);
 			path = NihongoLearning;
+			sourceTree = "<group>";
+		};
+		14ED48811E08D2E200CB43FA /* Data Service */ = {
+			isa = PBXGroup;
+			children = (
+				14ED48821E08D30400CB43FA /* DataService.swift */,
+			);
+			name = "Data Service";
+			sourceTree = "<group>";
+		};
+		B038F5879C3CA0660653276E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C61B156472CC10E4FB698D3 /* Pods_NihongoLearning.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B5F460ECB7AE4D29A8527C30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32E1D5156685DB23275F7BCA /* Pods-NihongoLearning.debug.xcconfig */,
+				AB33B57EBD090CFFD4E84F37 /* Pods-NihongoLearning.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -98,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 149BF1B91E000AA4001B29FD /* Build configuration list for PBXNativeTarget "NihongoLearning" */;
 			buildPhases = (
+				2A6C541604AE21CBCAAB05FF /* [CP] Check Pods Manifest.lock */,
 				149BF1A31E000AA4001B29FD /* Sources */,
 				149BF1A41E000AA4001B29FD /* Frameworks */,
 				149BF1A51E000AA4001B29FD /* Resources */,
+				DA4689F48E9BB73603346B69 /* [CP] Embed Pods Frameworks */,
+				E663500D594D9D22FAD1C9E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +168,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = EX9Z9PUK4G;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -152,12 +200,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				149BF1B51E000AA4001B29FD /* LaunchScreen.storyboard in Resources */,
+				14ED48801E082CB300CB43FA /* GoogleService-Info.plist in Resources */,
 				149BF1B21E000AA4001B29FD /* Assets.xcassets in Resources */,
 				149BF1B01E000AA4001B29FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A6C541604AE21CBCAAB05FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA4689F48E9BB73603346B69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NihongoLearning/Pods-NihongoLearning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E663500D594D9D22FAD1C9E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NihongoLearning/Pods-NihongoLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		149BF1A31E000AA4001B29FD /* Sources */ = {
@@ -167,7 +264,8 @@
 				14F4AEBA1E055D5C00113FDB /* ResultTableViewCell.swift in Sources */,
 				149BF1AD1E000AA4001B29FD /* ViewController.swift in Sources */,
 				149BF1C51E001892001B29FD /* ANSWERS.swift in Sources */,
-				14035E351E006B8600A89AE4 /* AnswerModel.swift in Sources */,
+				14ED48831E08D30400CB43FA /* DataService.swift in Sources */,
+				14035E351E006B8600A89AE4 /* QuestionModel.swift in Sources */,
 				149BF1C31E0014BD001B29FD /* QuestionTableViewCell.swift in Sources */,
 				14EE13831E04A48600D88DDF /* Result.swift in Sources */,
 				14035E371E0083F400A89AE4 /* AnsweredStatus.swift in Sources */,
@@ -295,8 +393,10 @@
 		};
 		149BF1BA1E000AA4001B29FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E1D5156685DB23275F7BCA /* Pods-NihongoLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NihongoLearning/NihongoLearning.entitlements;
 				DEVELOPMENT_TEAM = EX9Z9PUK4G;
 				INFOPLIST_FILE = NihongoLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -308,8 +408,10 @@
 		};
 		149BF1BB1E000AA4001B29FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB33B57EBD090CFFD4E84F37 /* Pods-NihongoLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NihongoLearning/NihongoLearning.entitlements;
 				DEVELOPMENT_TEAM = EX9Z9PUK4G;
 				INFOPLIST_FILE = NihongoLearning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

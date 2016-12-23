@@ -19,7 +19,6 @@ class QuestionTableViewCell: UITableViewCell {
     func updateUI(answers: ANSWERS){
         answerLabel.text = "(\(answers.answerOption)). " + answers.answerDescription
         
-        print(answers.answerDescription)
         
     }
     override func awakeFromNib() {

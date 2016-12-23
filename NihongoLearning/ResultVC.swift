@@ -24,6 +24,8 @@ class ResultVC: UIViewController {
         }
     }
     
+    var score:Double = 0.0
+    
     
 
     
@@ -67,7 +69,7 @@ extension ResultVC: UITableViewDelegate,UITableViewDataSource{
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as? ResultTableViewCell{
             let result = finalResults?[indexPath.row]
             cell.updateUI(results: result!)
-            print("tableView成功")
+            
             return cell
         }else{
             return UITableViewCell()
@@ -75,7 +77,7 @@ extension ResultVC: UITableViewDelegate,UITableViewDataSource{
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return (finalResults?.count)!
     }
     
     

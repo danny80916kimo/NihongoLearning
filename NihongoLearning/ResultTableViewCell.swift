@@ -15,8 +15,11 @@ class ResultTableViewCell: UITableViewCell {
     
     
     func updateUI(results: Result){
-        resultCellLabel.text = "\(results.correct)"
-        
+        if results.correct {
+        resultCellLabel.text = "O"
+        }else{
+            resultCellLabel.text = "X"
+        }
     }
 
 

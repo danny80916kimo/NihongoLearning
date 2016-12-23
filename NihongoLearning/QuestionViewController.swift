@@ -7,22 +7,27 @@
 //
 
 import UIKit
-
+import Firebase
 class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
     
     
+    
+    
+    @IBOutlet weak var answerTableView: UITableView!
+    
+    
     var result = [Result]()
     
-    
+    var FirebaseQ = [QuestionBuild?]()
     
     @IBOutlet weak var questionDescriptionLabel: UILabel!
     var answeredAQuestion = AnsweredStatus()
     
     
     
-    let q1 = QuestionBuild(questionDescription: "下列哪一種自然環境是台灣能夠產出最多樣的水果，具有成為水果王國的條件？", answerA: "以平原為主的溫帶地區", answerB: "有高山地形的溫帶地區", answerC: "以平原為主的熱帶地區", answerD: "有高山地形的熱帶地區", correctAnswer: .D )
-    let q2 = QuestionBuild(questionDescription: "第二題題目", answerA: "Q2選項A", answerB: "Q2選項B", answerC: "Q2選項C", answerD: "Q2選項D" , correctAnswer: .A)
+    var q1 = QuestionBuild(questionDescription: "下列哪一種自然環境是台灣能夠產出最多樣的水果，具有成為水果王國的條件？", answerA: "以平原為主的溫帶地區", answerB: "有高山地形的溫帶地區", answerC: "以平原為主的熱帶地區", answerD: "有高山地形的熱帶地區", correctAnswer: .D )
+    var q2 = QuestionBuild(questionDescription: "第二題題目", answerA: "Q2選項A", answerB: "Q2選項B", answerC: "Q2選項C", answerD: "Q2選項D" , correctAnswer: .A)
     
     let q3 = QuestionBuild(questionDescription: "第三題題目", answerA: "Q3選項A", answerB: "Q3選項B", answerC: "Q3選項C", answerD: "Q3選項D" , correctAnswer: .A)
     
@@ -38,61 +43,28 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
     func makeQuestion(questionNumber: QuestionBuild){
         
         questionDescriptionLabel.text = questionNumber.questionDescription
-        let ansStringA = questionNumber.answerA
-        let ansStringB = questionNumber.answerB
-        let ansStringC = questionNumber.answerC
-        let ansStringD = questionNumber.answerD
-        let ansCorrectAns = questionNumber.correctAnswer
-        print("RyanDebug:" + ansStringA)
         
-        
-        //建立ans作為ANSWERS物件來寫入剛剛建立的ans1String
-        
-        let ansA = ANSWERS(answerDescription: ansStringA, answerOption: .A)
-        let ansB = ANSWERS(answerDescription: ansStringB, answerOption: .B)
-        let ansC = ANSWERS(answerDescription: ansStringC, answerOption: .C)
-        let ansD = ANSWERS(answerDescription: ansStringD, answerOption: .D)
-        let ansCorrect = ANSWERS(answerDescription: "", answerOption: ansCorrectAns)
-        
-        //把answers append到物件序列裡面好讓tableCell去讀這個序列的answerDecription
-        
-        print("RyanDebug:\(ansA.answerDescription)")
+        let ansA = ANSWERS(answerDescription: questionNumber.answerA, answerOption: .A)
+        let ansB = ANSWERS(answerDescription: questionNumber.answerB, answerOption: .B)
+        let ansC = ANSWERS(answerDescription: questionNumber.answerC, answerOption: .C)
+        let ansD = ANSWERS(answerDescription: questionNumber.answerD, answerOption: .D)
+    
         
         answers.insert(ansA , at: 0)
         answers.insert(ansB , at: 1)
         answers.insert(ansC , at: 2)
         answers.insert(ansD , at: 3)
-        answers.insert(ansCorrect ,at: 4)
         
         if answeredAQuestion.numberOfQuestionAnswered >= 1{
-            answers.removeSubrange(5...9)
+            answers.removeSubrange(4...7)
         }
-        print("RyanDebug:\(answers.description)")
-        
-        
         
         
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    @IBOutlet weak var answerTableView: UITableView!
+    @IBOutlet weak var answer: UITableView!
     
     
     var answers = [ANSWERS]()
@@ -114,10 +86,8 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         return 4
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.answerTableView.reloadData()
         
-        
-        
+//        self.answerTableView.reloadData()
         
         
         answeredAQuestion.answeredOneQuestion()
@@ -128,12 +98,12 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         case 1:
             print("第一題答完")
             
-            makeQuestion(questionNumber: q2)
+            makeQuestion(questionNumber: FirebaseQ[1]!)
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q1.correctAnswer{
+            if answer.answerOption == FirebaseQ[0]?.correctAnswer {
                 print("第1題答對了")
                 let q1result = Result(correct: true)
                 result.append(q1result)
@@ -142,21 +112,21 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 let q1result = Result(correct: false)
                 result.append(q1result)
             }
-
-    
             
-                
-                
+            
+            
+            
+            
         case 2:
             print("第二題答完")
             
-            makeQuestion(questionNumber: q3)
+            makeQuestion(questionNumber: FirebaseQ[2]!)
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
                 
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q2.correctAnswer{
+            if answer.answerOption == FirebaseQ[1]!.correctAnswer {
                 print("第2題答對了")
                 let q2result = Result(correct: true)
                 result.append(q2result)
@@ -165,17 +135,17 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 let q2result = Result(correct: false)
                 result.append(q2result)
             }
-
+            
             
         case 3:
-            makeQuestion(questionNumber: q4)
+            makeQuestion(questionNumber: FirebaseQ[3]!)
             
             print("第三題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q3.correctAnswer{
+            if answer.answerOption == FirebaseQ[2]!.correctAnswer {
                 print("第3題答對了")
                 let q3result = Result(correct: true)
                 result.append(q3result)
@@ -185,14 +155,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 result.append(q3result)
             }
         case 4:
-            makeQuestion(questionNumber: q5)
-        
+            makeQuestion(questionNumber: FirebaseQ[4]!)
+            
             print("第四題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q4.correctAnswer{
+            if answer.answerOption == FirebaseQ[3]!.correctAnswer {
                 print("第4題答對了")
                 let q4result = Result(correct: true)
                 result.append(q4result)
@@ -202,14 +172,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 result.append(q4result)
             }
         case 5:
-            makeQuestion(questionNumber: q6)
+            makeQuestion(questionNumber: FirebaseQ[5]!)
             
             print("第五題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q5.correctAnswer{
+            if answer.answerOption == FirebaseQ[4]!.correctAnswer {
                 print("第5題答對了")
                 let q5result = Result(correct: true)
                 result.append(q5result)
@@ -219,14 +189,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 result.append(q5result)
             }
         case 6:
-            makeQuestion(questionNumber: q7)
+            makeQuestion(questionNumber: FirebaseQ[6]!)
             
             print("第六題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q6.correctAnswer{
+            if answer.answerOption == FirebaseQ[5]!.correctAnswer{
                 print("第6題答對了")
                 let q6result = Result(correct: true)
                 result.append(q6result)
@@ -236,14 +206,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 result.append(q6result)
             }
         case 7:
-            makeQuestion(questionNumber: q8)
+            makeQuestion(questionNumber: FirebaseQ[7]!)
             
             print("第七題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q7.correctAnswer{
+            if answer.answerOption == FirebaseQ[6]!.correctAnswer {
                 print("第7題答對了")
                 let q7result = Result(correct: true)
                 result.append(q7result)
@@ -253,14 +223,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 result.append(q7result)
             }
         case 8:
-            makeQuestion(questionNumber: q9)
+            makeQuestion(questionNumber: FirebaseQ[8]!)
             
             print("第八題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q8.correctAnswer{
+            if answer.answerOption == FirebaseQ[7]!.correctAnswer{
                 print("第8題答對了")
                 let q8result = Result(correct: true)
                 result.append(q8result)
@@ -271,14 +241,14 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
             }
             
         case 9:
-            makeQuestion(questionNumber: q10)
+            makeQuestion(questionNumber: FirebaseQ[9]!)
             
             print("第九題答完")
             DispatchQueue.main.async{
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q9.correctAnswer{
+            if answer.answerOption == FirebaseQ[8]!.correctAnswer{
                 print("第9題答對了")
                 let q9result = Result(correct: true)
                 result.append(q9result)
@@ -295,19 +265,17 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
                 self.answerTableView.reloadData()
             }
             let answer = answers[indexPath.row]
-            if answer.answerOption == q10.correctAnswer{
+            if answer.answerOption == FirebaseQ[9]!.correctAnswer {
                 print("第10題答對了")
                 let q10result = Result(correct: true)
                 result.append(q10result)
             }else{
                 print("第10題答錯了")
                 let q10result = Result(correct: false)
- 
+                
                 result.append(q10result)
             }
             
-            
-            print("before sending the result \(result[9].correct)")
             
             performSegue(withIdentifier: "QuestionViewController", sender: result)
             
@@ -315,8 +283,8 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
         default:
             self.answerTableView.reloadData()
             print("還沒答題")
-
-
+            
+            
             
             
         }
@@ -326,43 +294,72 @@ class QuestionViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        answerTableView.delegate = self
-        answerTableView.dataSource = self
         
-        makeQuestion(questionNumber: q1)
+        DispatchQueue.global().async {
+            
+        DataService.ds.REF_QUESTION.observe(.value, with: {(snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                for snap in snapshot {
+                    print("SNAP\(snap)")
+                    self.answerTableView.reloadData()
+                    
+                    if let questionDict = snap.value as? Dictionary<String, AnyObject>{
+                        let key = snap.key
+                        let question = QuestionBuild(questionKey: key, questionData: questionDict)
+                        self.FirebaseQ.append(question)
+                        print("zack\(question.questionDescription)")
+                        
+                        
+                    }
+                }
+            }
+            
+             print("DataServiceDEBUG:\(self.FirebaseQ[0]?.questionDescription)")
+//            self.makeQuestion(questionNumber: self.FirebaseQ[0])
+            
+            if let FirebaseWorking = self.FirebaseQ[0]{
+                self.makeQuestion(questionNumber: FirebaseWorking)
+            }
+            self.questionDescriptionLabel.text = self.FirebaseQ[0]?.questionDescription
+            
+            self.answerTableView.delegate = self
+            self.answerTableView.dataSource = self
+        })
         
-    }
+        }
+        
+           }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let destination = segue.destination as? ResultVC{
-            if let sendResult = sender as?Array<Result> {
+            if let sendResult = sender as? Array<Result> {
                 destination.finalResults = sendResult
-                print("finalResult" + "\(destination.finalResults)")
             }
         }
-    
-    
-    
-    
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("第1題答對答錯" + "\(result[0].correct)")
-        print("第2題答對答錯" + "\(result[1].correct)")
-        print("第3題答對答錯" + "\(result[2].correct)")
-        print("第4題答對答錯" + "\(result[3].correct)")
-        print("第5題答對答錯" + "\(result[4].correct)")
-        print("第6題答對答錯" + "\(result[5].correct)")
-        print("第7題答對答錯" + "\(result[6].correct)")
-        print("第8題答對答錯" + "\(result[7].correct)")
-        print("第9題答對答錯" + "\(result[8].correct)")
-        print("第10題答對答錯" + "\(result[9].correct)")
+        
+        
+        
         
     }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        print("第1題答對答錯" + "\(result[0].correct)")
+//        print("第2題答對答錯" + "\(result[1].correct)")
+//        print("第3題答對答錯" + "\(result[2].correct)")
+//        print("第4題答對答錯" + "\(result[3].correct)")
+//        print("第5題答對答錯" + "\(result[4].correct)")
+//        print("第6題答對答錯" + "\(result[5].correct)")
+//        print("第7題答對答錯" + "\(result[6].correct)")
+//        print("第8題答對答錯" + "\(result[7].correct)")
+//        print("第9題答對答錯" + "\(result[8].correct)")
+//        print("第10題答對答錯" + "\(result[9].correct)")
+//        
+//    }
     /*
      // MARK: - Navigation
      

@@ -14,7 +14,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var resultCellLabel: UILabel!
     
     
-    func updateUI(results: Result){
+    func updateUI(_ results: Result){
         if results.correct {
         resultCellLabel.text = "O"
         }else{

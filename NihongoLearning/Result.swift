@@ -14,7 +14,7 @@ class Result{
         return _correct
     }
     
-    private var _correct:Bool
+    fileprivate var _correct:Bool
     init(correct:Bool){
         _correct = correct
     }

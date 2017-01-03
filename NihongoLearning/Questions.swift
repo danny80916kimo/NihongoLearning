@@ -9,11 +9,11 @@
 import Foundation
 
 class Questions{
-    private var _questionDescription: String!
-    private var _answerA: String!
-    private var _ansqerB: String!
-    private var _answerC: String!
-    private var _answerD: String!
+    fileprivate var _questionDescription: String!
+    fileprivate var _answerA: String!
+    fileprivate var _ansqerB: String!
+    fileprivate var _answerC: String!
+    fileprivate var _answerD: String!
         
     var questionDescription: String{
         return _questionDescription

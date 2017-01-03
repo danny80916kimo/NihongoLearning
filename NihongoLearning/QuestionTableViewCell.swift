@@ -16,7 +16,7 @@ class QuestionTableViewCell: UITableViewCell {
     
     
     
-    func updateUI(answers: ANSWERS){
+    func updateUI(_ answers: ANSWERS){
         answerLabel.text = "(\(answers.answerOption)). " + answers.answerDescription
         
         

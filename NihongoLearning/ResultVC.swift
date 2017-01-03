@@ -14,7 +14,9 @@ class ResultVC: UIViewController {
     @IBAction func playAgainPressed(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)
-        self.parent?.loadView()
+        self.presentingViewController?.loadView()
+        self.presentingViewController?.viewDidLoad()
+        
     }
     
     @IBAction func backToMainPressed(_ sender: Any) {
@@ -29,7 +31,7 @@ class ResultVC: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
-    private var _finalResults: Array<Result>!
+    fileprivate var _finalResults: Array<Result>!
     
     var finalResults: Array<Result>?{
         get{
@@ -94,7 +96,7 @@ extension ResultVC: UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "resultsCell", for: indexPath) as? ResultTableViewCell{
             let result = finalResults?[indexPath.row]
-            cell.updateUI(results: result!)
+            cell.updateUI(result!)
             
             return cell
         }else{

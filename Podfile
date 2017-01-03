@@ -9,7 +9,8 @@ target 'NihongoLearning' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase'
-
+  pod 'FBSDKLoginKit'
+  
   # Pods for NihongoLearning
 
 end

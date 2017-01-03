@@ -19,14 +19,14 @@ enum AnswerOption:String{
 
 
 class QuestionBuild{
-    private var _questionDescription:String!
-    private var _answerA:String!
-    private var _answerB:String!
-    private var _answerC:String!
-    private var _answerD:String!
-    private var _correctAnswer: AnswerOption?
+    fileprivate var _questionDescription:String!
+    fileprivate var _answerA:String!
+    fileprivate var _answerB:String!
+    fileprivate var _answerC:String!
+    fileprivate var _answerD:String!
+    fileprivate var _correctAnswer: AnswerOption?
     
-    private var _questionKey: String!
+    fileprivate var _questionKey: String!
     
     
     

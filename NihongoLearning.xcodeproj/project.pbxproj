@@ -10,6 +10,7 @@
 		14035E331E0044AB00A89AE4 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E321E0044AB00A89AE4 /* Questions.swift */; };
 		14035E351E006B8600A89AE4 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E341E006B8600A89AE4 /* QuestionModel.swift */; };
 		14035E371E0083F400A89AE4 /* AnsweredStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14035E361E0083F400A89AE4 /* AnsweredStatus.swift */; };
+		14490CF11E12179F001FB341 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14490CF01E12179F001FB341 /* LogInVC.swift */; };
 		1476C9EE1E04989F005A099F /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476C9ED1E04989F005A099F /* ResultVC.swift */; };
 		149BF1AB1E000AA4001B29FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1AA1E000AA4001B29FD /* AppDelegate.swift */; };
 		149BF1AD1E000AA4001B29FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149BF1AC1E000AA4001B29FD /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		14035E321E0044AB00A89AE4 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		14035E341E006B8600A89AE4 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		14035E361E0083F400A89AE4 /* AnsweredStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnsweredStatus.swift; sourceTree = "<group>"; };
+		14490CF01E12179F001FB341 /* LogInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		1476C9ED1E04989F005A099F /* ResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
 		149BF1A71E000AA4001B29FD /* NihongoLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NihongoLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		149BF1AA1E000AA4001B29FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				149BF1C21E0014BD001B29FD /* QuestionTableViewCell.swift */,
 				14F4AEB91E055D5B00113FDB /* ResultTableViewCell.swift */,
 				149BF1AE1E000AA4001B29FD /* Main.storyboard */,
+				14490CF01E12179F001FB341 /* LogInVC.swift */,
 				1476C9ED1E04989F005A099F /* ResultVC.swift */,
 				149BF1B11E000AA4001B29FD /* Assets.xcassets */,
 				149BF1B31E000AA4001B29FD /* LaunchScreen.storyboard */,
@@ -167,6 +170,7 @@
 					149BF1A61E000AA4001B29FD = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = EX9Z9PUK4G;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -263,6 +267,7 @@
 			files = (
 				14F4AEBA1E055D5C00113FDB /* ResultTableViewCell.swift in Sources */,
 				149BF1AD1E000AA4001B29FD /* ViewController.swift in Sources */,
+				14490CF11E12179F001FB341 /* LogInVC.swift in Sources */,
 				149BF1C51E001892001B29FD /* ANSWERS.swift in Sources */,
 				14ED48831E08D30400CB43FA /* DataService.swift in Sources */,
 				14035E351E006B8600A89AE4 /* QuestionModel.swift in Sources */,
@@ -341,7 +346,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos10.1;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -384,7 +389,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos10.1;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

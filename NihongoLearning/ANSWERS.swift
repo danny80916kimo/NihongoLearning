@@ -14,8 +14,8 @@ import Foundation
 class ANSWERS{
     
     
-    private var _answerDescription:String!
-    private var _answerOption:AnswerOption!
+    fileprivate var _answerDescription:String!
+    fileprivate var _answerOption:AnswerOption!
     
     var answerDescription:String{
         return _answerDescription

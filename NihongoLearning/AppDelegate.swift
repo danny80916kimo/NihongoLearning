@@ -9,18 +9,24 @@
 import UIKit
 import Firebase
 import FBSDKLoginKit
-
+import GoogleMobileAds
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
    
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        
+        
+        
         // Override point for customization after application launch.
         FIRApp.configure()
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-2706177383366966~1713134333")
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }

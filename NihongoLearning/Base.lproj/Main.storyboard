@@ -22,17 +22,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-Ig-j9j">
-                                <rect key="frame" x="105" y="201" width="111" height="114"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-Ig-j9j">
+                                <rect key="frame" x="110" y="234" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="2lG-DQ-cvp"/>
+                                    <constraint firstAttribute="height" constant="100" id="3Ru-ow-UzJ"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="FB_icon"/>
                                 <connections>
                                     <action selector="FBLogInpressed:" destination="DLN-T9-Mrz" eventType="touchUpInside" id="icY-Wz-ys5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Facebook登入" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-sX-FK2">
-                                <rect key="frame" x="105" y="328" width="132" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook登入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dcq-sX-FK2">
+                                <rect key="frame" x="91" y="352" width="138" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="138" id="4JB-tH-ki9"/>
+                                    <constraint firstAttribute="height" constant="21" id="NAi-hF-A1l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,9 +46,15 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.97432024229133818" blue="0.87280418113712155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ImX-Ig-j9j" firstAttribute="centerY" secondItem="g01-qO-uXz" secondAttribute="centerY" id="IpE-YI-9KY"/>
+                            <constraint firstItem="Dcq-sX-FK2" firstAttribute="centerX" secondItem="g01-qO-uXz" secondAttribute="centerX" id="Pkp-PF-ngK"/>
+                            <constraint firstItem="ImX-Ig-j9j" firstAttribute="centerX" secondItem="g01-qO-uXz" secondAttribute="centerX" id="YQ3-2k-2FJ"/>
+                            <constraint firstItem="Dcq-sX-FK2" firstAttribute="top" secondItem="ImX-Ig-j9j" secondAttribute="bottom" constant="18" id="q8k-fp-UdA"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" id="Fdg-27-7Bv"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LogInVC" id="Fdg-27-7Bv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73h-Cx-8nP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,7 +73,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5C" translatesAutoresizingMaskIntoConstraints="NO" id="c2l-V2-Nph">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B0B581D6-7271-463A-82C6-D7624FD3E294" translatesAutoresizingMaskIntoConstraints="NO" id="c2l-V2-Nph">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <variation key="heightClass=regular-widthClass=compact" image="5C"/>
                             </imageView>
@@ -111,10 +123,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4N4-kx-jLz">
-                                <rect key="frame" x="16" y="135" width="288" height="413"/>
+                                <rect key="frame" x="16" y="135" width="288" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="413" id="ZT4-Q1-GSn"/>
+                                    <constraint firstAttribute="height" constant="375" id="ZT4-Q1-GSn"/>
                                 </constraints>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -168,6 +180,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQK-hy-hGw" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="cvp-CY-LBG"/>
+                                    <constraint firstAttribute="height" constant="50" id="y5D-1H-Um7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -176,7 +196,9 @@
                             <constraint firstItem="jgN-Cg-qek" firstAttribute="leading" secondItem="4N4-kx-jLz" secondAttribute="leading" id="K5G-hI-s6i"/>
                             <constraint firstItem="nuq-db-hPo" firstAttribute="top" secondItem="92O-wB-jbg" secondAttribute="bottom" id="Meb-lz-8eR"/>
                             <constraint firstItem="92O-wB-jbg" firstAttribute="top" secondItem="EEm-Qc-idf" secondAttribute="top" id="Ovj-FS-4B8"/>
+                            <constraint firstItem="GQK-hy-hGw" firstAttribute="centerX" secondItem="EEm-Qc-idf" secondAttribute="centerX" id="VrQ-gS-NY3"/>
                             <constraint firstItem="4N4-kx-jLz" firstAttribute="top" secondItem="jgN-Cg-qek" secondAttribute="bottom" constant="18" id="WkB-Gn-uVt"/>
+                            <constraint firstItem="nuq-db-hPo" firstAttribute="top" secondItem="GQK-hy-hGw" secondAttribute="bottom" id="Ygx-wy-9ve"/>
                             <constraint firstAttribute="trailing" secondItem="92O-wB-jbg" secondAttribute="trailing" id="bSO-Yy-H4Q"/>
                             <constraint firstItem="jgN-Cg-qek" firstAttribute="top" secondItem="2Jx-Sc-rIa" secondAttribute="bottom" constant="8" symbolic="YES" id="dne-fK-iv6"/>
                             <constraint firstItem="jgN-Cg-qek" firstAttribute="trailing" secondItem="4N4-kx-jLz" secondAttribute="trailing" id="h4J-hs-Vm8"/>
@@ -187,6 +209,7 @@
                     </view>
                     <connections>
                         <outlet property="answerTableView" destination="4N4-kx-jLz" id="0V2-JN-DMe"/>
+                        <outlet property="bannerView" destination="GQK-hy-hGw" id="M3j-C0-L80"/>
                         <outlet property="questionDescriptionLabel" destination="jgN-Cg-qek" id="BWh-Sh-eX3"/>
                         <segue destination="EmR-nG-4oI" kind="show" identifier="QuestionViewController" id="nae-oW-fUv"/>
                     </connections>
@@ -227,7 +250,7 @@
                                         <rect key="frame" x="0.0" y="28" width="269" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kcF-ZT-DqH" id="MLs-DS-1Fn">
-                                            <rect key="frame" x="0.0" y="0.0" width="269" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="269" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYv-js-A6O">
@@ -321,6 +344,22 @@
     </scenes>
     <resources>
         <image name="5C" width="320" height="568"/>
+        <image name="B0B581D6-7271-463A-82C6-D7624FD3E294" width="320" height="568">
+            <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
+GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
+V05TQ29sb3KAAoAMEiTAAACAA4AKWnszMjAsIDU2OH3SFQoWGFpOUy5vYmplY3RzoReABIAJ0hUKGhii
+GxyABYAGgAkQBdMgCiEiIyRXTlMuYmFzZVtOUy5yZWxhdGl2ZYAAgAiAB18QfGZpbGU6Ly8vQXBwbGlj
+YXRpb25zL1hjb2RlLmFwcC9Db250ZW50cy9QbHVnSW5zL0lERUludGVyZmFjZUJ1aWxkZXJLaXQuaWRl
+cGx1Z2luL0NvbnRlbnRzL1Jlc291cmNlcy9JQk1pc3NpbmdJbWFnZUdseXBoLnRpZmbSJygpKlokY2xh
+c3NuYW1lWCRjbGFzc2VzVU5TVVJMoikrWE5TT2JqZWN00icoLS5XTlNBcnJheaItK9MwMQoyMzRXTlNX
+aGl0ZVxOU0NvbG9yU3BhY2VEMCAwABADgAvSJyg2N1dOU0NvbG9yojYr0icoOTpXTlNJbWFnZaI5K18Q
+D05TS2V5ZWRBcmNoaXZlctE9PlRyb290gAEACAARABoAIwAtADIANwBFAEsAVgBdAGQAcQB4AIAAggCE
+AIkAiwCNAJgAnQCoAKoArACuALMAtgC4ALoAvAC+AMUAzQDZANsA3QDfAV4BYwFuAXcBfQGAAYkBjgGW
+AZkBoAGoAbUBugG8Ab4BwwHLAc4B0wHbAd4B8AHzAfgAAAAAAAACAQAAAAAAAAA/AAAAAAAAAAAAAAAA
+AAAB+g
+</mutableData>
+        </image>
         <image name="FB_icon" width="231" height="250"/>
     </resources>
 </document>

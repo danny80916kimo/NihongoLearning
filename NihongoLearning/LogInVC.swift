@@ -21,7 +21,7 @@ class LogInVC: UIViewController {
         }else if result?.isCancelled == true{
             print("使用者自己登出囉")
         }else{
-            print("成功了啦！！！")
+            print("臉書授權成功！！！")
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             self.firebaseAuth(credential)
             }
@@ -34,6 +34,7 @@ class LogInVC: UIViewController {
                 print("firebase授權不成功-\(error)")
             }else{
                 print("firebase授權成功")
+                self.performSegue(withIdentifier: "LogInVC", sender: nil)
             }
             
         })
